@@ -9,6 +9,7 @@ nodeos \
 --genesis-json $DATADIR"/../../genesis.json" \
 --signature-provider EOS6pcdgzFGRXquEYJrrn4sJxGw5bGPZABiqWpyi1jRZp4PBUd6ud=KEY:5KWWqPKUxj1PN6vtJrssd2pbbKFk2m4WZLMHmf4Nowov5Xu9pYU \
 --plugin eosio::producer_plugin \
+--plugin producer_api_plugin \
 --plugin eosio::chain_api_plugin \
 --plugin eosio::http_plugin \
 --plugin eosio::history_api_plugin \
@@ -24,6 +25,7 @@ nodeos \
 --http-validate-host=false \
 --verbose-http-errors \
 --enable-stale-production \
+--chain-state-db-size-mb 8192 \
 --p2p-peer-address localhost:9011 \
 --p2p-peer-address localhost:9012 \
 --p2p-peer-address localhost:9013 \
