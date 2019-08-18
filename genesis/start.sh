@@ -1,5 +1,8 @@
 #!/bin/bash
 DATADIR="./blockchain"
+BPACCOUNT=
+PUBKEY=EOS6yNeFEiMVartK5M6VZP5KB9vuj1Y4Lt5Xvyp2wGjpHzapdvjc1
+PRIKEY=5KewLbtaCEAD8DFrgBfJF8y4BwVpoKGGoKJqLmrgTRB9jFt13xG
 
 if [ ! -d $DATADIR ]; then
   mkdir -p $DATADIR;

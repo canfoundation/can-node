@@ -1,5 +1,8 @@
 #!/bin/bash
 DATADIR="./blockchain"
+BPACCOUNT=
+PUBKEY=EOS6yNeFEiMVartK5M6VZP5KB9vuj1Y4Lt5Xvyp2wGjpHzapdvjc1
+PRIKEY=5KewLbtaCEAD8DFrgBfJF8y4BwVpoKGGoKJqLmrgTRB9jFt13xG
 
 if [ ! -d $DATADIR ]; then
   mkdir -p $DATADIR;
@@ -26,9 +29,12 @@ nodeos \
 --enable-stale-production \
 --chain-state-db-size-mb 8192 \
 --pause-on-startup \
---p2p-peer-address localhost:9011 \
---p2p-peer-address localhost:9012 \
---p2p-peer-address localhost:9013 \
+--p2p-peer-address 192.168.111.1:9010 \
+--p2p-peer-address 192.168.111.2:9010 \
+--p2p-peer-address 192.168.111.3:9010 \
+--p2p-peer-address 192.168.111.4:9010 \
+--p2p-peer-address 192.168.111.5:9010 \
+--p2p-peer-address 192.168.111.6:9010 \
 --hard-replay-blockchain \
 >> $DATADIR"/nodeos.log" 2>&1 & \
 echo $! > $DATADIR"/eosd.pid"
