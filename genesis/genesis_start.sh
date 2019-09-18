@@ -14,7 +14,6 @@ nodeos \
 --data-dir $DATADIR"/data" \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
---producer-name $BPACCOUNT \
 --http-server-address 0.0.0.0:8888 \
 --p2p-listen-endpoint 0.0.0.0:9010 \
 --access-control-allow-origin=* \
@@ -22,6 +21,6 @@ nodeos \
 --http-validate-host=false \
 --verbose-http-errors \
 --chain-state-db-size-mb 8192 \
---p2p-peer-address 192.168.111.5:9010 \
+--p2p-peer-address p2p-ip \
 >> $DATADIR"/nodeos.log" 2>&1 & \
 echo $! > $DATADIR"/eosd.pid"
