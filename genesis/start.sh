@@ -11,11 +11,17 @@ fi
 nodeos \
 --plugin eosio::chain_api_plugin \
 --plugin eosio::http_plugin \
+--disable-replay-opts \
+--plugin eosio::state_history_plugin \
+--trace-history \
+--chain-state-history \
+--state-history-endpoint 0.0.0.0:8080 \
+--state-history-dir state-history \
 --data-dir $DATADIR"/data" \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
 --producer-name $BPACCOUNT \
---http-server-address 127.0.0.1:8888 \
+--http-server-address 0.0.0.0xw:8888 \
 --p2p-listen-endpoint 0.0.0.0:9010 \
 --access-control-allow-origin=* \
 --contracts-console \

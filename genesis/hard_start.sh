@@ -21,7 +21,7 @@ nodeos \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
 --producer-name $BPACCOUNT \
---http-server-address 127.0.0.1:8888 \
+--http-server-address 0.0.0.0:8888 \
 --p2p-listen-endpoint 0.0.0.0:9010 \
 --access-control-allow-origin=* \
 --contracts-console \
