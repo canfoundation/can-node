@@ -10,11 +10,14 @@ fi
 
 nodeos \
 --genesis-json $DATADIR"/../../genesis.json" \
---signature-provider $PUBKEY=KEY:$PRIKEY \
---plugin eosio::producer_plugin \
---plugin eosio::producer_api_plugin \
 --plugin eosio::chain_api_plugin \
 --plugin eosio::http_plugin \
+--disable-replay-opts \
+--plugin eosio::state_history_plugin \
+--trace-history \
+--chain-state-history \
+--state-history-endpoint 0.0.0.0:8080 \
+--state-history-dir state-history \
 --data-dir $DATADIR"/data" \
 --blocks-dir $DATADIR"/blocks" \
 --config-dir $DATADIR"/config" \
@@ -25,8 +28,7 @@ nodeos \
 --contracts-console \
 --http-validate-host=false \
 --verbose-http-errors \
---enable-stale-production \
---chain-state-db-size-mb 8192 \
+--chain-state-db-size-mb 16384 \
 --pause-on-startup \
 --p2p-peer-address 192.168.111.1:9010 \
 --p2p-peer-address 192.168.111.2:9010 \
